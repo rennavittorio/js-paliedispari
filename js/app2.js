@@ -3,8 +3,13 @@ Chiedere all’utente di inserire una parola
 Creare una funzione per capire se la parola inserita è palindroma
 Comunicare all’utente (decidete voi come) se la parola che ha inserito è palindroma oppure no */
 
+let userWordInput = '';
 
-let userWordInput = prompt('insert a word');
+do {
+    userWordInput = prompt('insert a word');
+} while (userWordInput === null || userWordInput === '');
+
+
 let palindromeChecked = isPalindrome(userWordInput);
 console.log('word inserted is:', userWordInput);
 console.log('is palindrome?', palindromeChecked);
