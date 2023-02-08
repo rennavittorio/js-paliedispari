@@ -23,11 +23,27 @@ function toReverseArray (startArray) {
     return reversedArray;
 }
 
+// pulire un array da spazi vuoti
+function toDeleteEmptyElements (array){
+    for (let i = 0; i < array.length; i++){
+
+        if (array[i] === ' '){ //serve aggiungere lo spazio
+            array.splice(i, 1);
+        }
+
+    }
+
+    return array;
+}
+
+//palidrome check
 function isPalindrome (wordInput){
     
-    let wordToLowerCase = wordInput.toLowerCase(); //controllo l'input
-    let wordToArray = wordToLowerCase.split(''); //trasformo in array
-    let reversedArray = toReverseArray(wordToArray); //reverse
+    //ctrl input case e spazi in caso di frasi
+    let wordToArray = wordInput.toLowerCase().split('');
+    wordToArray = toDeleteEmptyElements(wordToArray);
+
+    let reversedArray = toReverseArray(wordToArray); //creo array reversed di ctrl
     
     let palindromeWord = true; //faccio check tra array
     for (let i = 0; i < wordToArray.length; i++){
