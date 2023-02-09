@@ -16,6 +16,18 @@ console.log('is palindrome?', palindromeChecked);
 
 
 //FUNCTION
+//to split
+function toSplitIntoArray (word){
+    let wordIntoArray = [];
+    for (let i = 0; i < word.length; i++){
+        let selectedLetter = word[i];
+        wordIntoArray.push(selectedLetter);
+    }
+
+    return wordIntoArray;
+}
+
+
 //dato un array, voglio il suo inverso
 function toReverseArray (startArray) {
     let reversedArray = []; //creo array reverse
@@ -46,8 +58,8 @@ function isPalindrome (wordInput){
     
     //ctrl input case e spazi in caso di frasi
     let wordToArray = wordInput.toLowerCase().split('');
+    wordToArray = toSplitIntoArray(wordToArray);
     wordToArray = toDeleteEmptyElements(wordToArray);
-
     let reversedArray = toReverseArray(wordToArray); //creo array reversed di ctrl
     
     let palindromeWord = true; //faccio check tra array
