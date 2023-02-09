@@ -57,7 +57,7 @@ function toDeleteEmptyElements (array){
 function isPalindrome (wordInput){
     
     //ctrl input case e spazi in caso di frasi
-    let wordToArray = wordInput.toLowerCase().split('');
+    let wordToArray = wordInput.toLowerCase();
     wordToArray = toSplitIntoArray(wordToArray);
     wordToArray = toDeleteEmptyElements(wordToArray);
     let reversedArray = toReverseArray(wordToArray); //creo array reversed di ctrl
